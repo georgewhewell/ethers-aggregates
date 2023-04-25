@@ -1,0 +1,24 @@
+[package]
+name = "ethers-aggregates"
+version = "0.1.0"
+edition = "2021"
+
+[[example]]
+name = "uniswap-v2-factory"
+path = "examples/uniswap-v2-factory.rs"
+
+[dependencies]
+ethers = { path = "../ethers-rs/ethers", features = ["ws", "abigen"] }
+serde = { version = "1.0.160", features = ["derive"] }
+serde_json = "1.0.96"
+thiserror = "1.0.40"
+tokio = { version = "1.27.0", features = ["fs"] }
+tracing = "0.1.37"
+tracing-subscriber = { version = "0.3.17", features = ["env-filter"] }
+
+[dev-dependencies]
+test-log = { version = "0.2.11", default-features = false, features = ["trace"] }
+tokio = { version = "1.27.0", features = ["macros"] }
+
+[build-dependencies]
+ethers = { path = "../ethers-rs/ethers", features = ["ws", "abigen"] }
